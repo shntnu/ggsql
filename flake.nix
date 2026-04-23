@@ -25,6 +25,8 @@
             nodejs
             wasm-pack
             binaryen
+            llvm
+            lld
           ];
 
           # nix cc-wrapper injects hardening flags (e.g. -fzero-call-used-regs)
