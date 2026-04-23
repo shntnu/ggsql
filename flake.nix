@@ -35,12 +35,17 @@
 
           shellHook = ''
             export LIBCLANG_PATH="${pkgs.libclang.lib}/lib"
-            # Force clang for wasm32 cross-compile. On macOS `cc` is clang by
-            # default so locally this is a no-op; on Linux CI `cc` is gcc,
-            # which lacks wasm builtins like __builtin_wasm_memory_size and
-            # breaks cc-rs when tree-sitter builds stdlib.c for wasm.
-            export CC_wasm32_unknown_unknown="${pkgs.clang}/bin/clang"
-            export CXX_wasm32_unknown_unknown="${pkgs.clang}/bin/clang++"
+            # Use unwrapped clang for wasm32 cross-compile. The nix cc-wrapper
+            # injects host glibc into the include path, which breaks when
+            # targetting wasm32 (clang finds gnu/stubs.h then fails on missing
+            # gnu/stubs-32.h). The unwrapped binary has no such injection.
+            # cargo itself also warns: "supplying --target wasm32-unknown-unknown
+            # != x86_64-unknown-linux-gnu argument to a nix-wrapped compiler may
+            # not work correctly - cc-wrapper is currently not designed with
+            # multi-target compilers in mind."
+            export CC_wasm32_unknown_unknown="${pkgs.llvmPackages.clang-unwrapped}/bin/clang"
+            export CXX_wasm32_unknown_unknown="${pkgs.llvmPackages.clang-unwrapped}/bin/clang++"
+            export AR_wasm32_unknown_unknown="${pkgs.llvmPackages.llvm}/bin/llvm-ar"
           '';
         };
       });
