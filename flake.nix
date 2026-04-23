@@ -23,7 +23,13 @@
             clang
             tree-sitter
             nodejs
+            wasm-pack
+            binaryen
           ];
+
+          # nix cc-wrapper injects hardening flags (e.g. -fzero-call-used-regs)
+          # that clang rejects when cross-compiling to wasm32-unknown-unknown.
+          hardeningDisable = [ "all" ];
 
           shellHook = ''
             export LIBCLANG_PATH="${pkgs.libclang.lib}/lib"
