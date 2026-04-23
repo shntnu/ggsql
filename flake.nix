@@ -35,6 +35,12 @@
 
           shellHook = ''
             export LIBCLANG_PATH="${pkgs.libclang.lib}/lib"
+            # Force clang for wasm32 cross-compile. On macOS `cc` is clang by
+            # default so locally this is a no-op; on Linux CI `cc` is gcc,
+            # which lacks wasm builtins like __builtin_wasm_memory_size and
+            # breaks cc-rs when tree-sitter builds stdlib.c for wasm.
+            export CC_wasm32_unknown_unknown="${pkgs.clang}/bin/clang"
+            export CXX_wasm32_unknown_unknown="${pkgs.clang}/bin/clang++"
           '';
         };
       });
