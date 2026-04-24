@@ -112,3 +112,7 @@ ggsql.Rcheck/
 *.dmg
 *.AppImage
 .cargo-packager/
+
+# Local Nix dev shell (fork-only; not part of upstream)
+.direnv/
+shell.nix
