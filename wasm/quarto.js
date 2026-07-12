@@ -295234,7 +295234,7 @@ function __wbg_get_imports() {
       const ret = getObject(arg0).getMonth();
       return ret;
     },
-    __wbg_getRandomValues_3f44b700395062e5: function() {
+    __wbg_getRandomValues_477b66419bbb968d: function() {
       return handleError(function(arg0, arg1) {
         globalThis.crypto.getRandomValues(getArrayU8FromWasm0(arg0, arg1));
       }, arguments);
@@ -295242,11 +295242,6 @@ function __wbg_get_imports() {
     __wbg_getRandomValues_c44a50d8cfdaebeb: function() {
       return handleError(function(arg0, arg1) {
         getObject(arg0).getRandomValues(getObject(arg1));
-      }, arguments);
-    },
-    __wbg_getRandomValues_e17307db78dbd90b: function() {
-      return handleError(function(arg0, arg1) {
-        globalThis.crypto.getRandomValues(getArrayU8FromWasm0(arg0, arg1));
       }, arguments);
     },
     __wbg_getRandomValues_ef12552bf5acd2fe: function() {
@@ -295319,7 +295314,7 @@ function __wbg_get_imports() {
           const a3 = state0.a;
           state0.a = 0;
           try {
-            return __wasm_bindgen_func_elem_2795(a3, state0.b, arg02, arg12);
+            return __wasm_bindgen_func_elem_7485(a3, state0.b, arg02, arg12);
           } finally {
             state0.a = a3;
           }
@@ -295415,7 +295410,7 @@ function __wbg_get_imports() {
       return addHeapObject(ret);
     },
     __wbindgen_cast_0000000000000001: function(arg0, arg1) {
-      const ret = makeMutClosure(arg0, arg1, __wasm_bindgen_func_elem_2732);
+      const ret = makeMutClosure(arg0, arg1, __wasm_bindgen_func_elem_7425);
       return addHeapObject(ret);
     },
     __wbindgen_cast_0000000000000002: function(arg0) {
@@ -295443,10 +295438,10 @@ function __wbg_get_imports() {
     "./ggsql_wasm_bg.js": import0
   };
 }
-function __wasm_bindgen_func_elem_2732(arg0, arg1, arg2) {
+function __wasm_bindgen_func_elem_7425(arg0, arg1, arg2) {
   try {
     const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-    wasm.__wasm_bindgen_func_elem_2732(retptr, arg0, arg1, addHeapObject(arg2));
+    wasm.__wasm_bindgen_func_elem_7425(retptr, arg0, arg1, addHeapObject(arg2));
     var r0 = getDataViewMemory0().getInt32(retptr + 4 * 0, true);
     var r1 = getDataViewMemory0().getInt32(retptr + 4 * 1, true);
     if (r1) {
@@ -295456,8 +295451,8 @@ function __wasm_bindgen_func_elem_2732(arg0, arg1, arg2) {
     wasm.__wbindgen_add_to_stack_pointer(16);
   }
 }
-function __wasm_bindgen_func_elem_2795(arg0, arg1, arg2, arg3) {
-  wasm.__wasm_bindgen_func_elem_2795(arg0, arg1, addHeapObject(arg2), addHeapObject(arg3));
+function __wasm_bindgen_func_elem_7485(arg0, arg1, arg2, arg3) {
+  wasm.__wasm_bindgen_func_elem_7485(arg0, arg1, addHeapObject(arg2), addHeapObject(arg3));
 }
 var GgsqlContextFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {

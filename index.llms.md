@@ -32,21 +32,21 @@ LABEL
 
 ##### Line chart
 
-![](./gallery/examples/thumbnails/minard.svg)
-
-##### Napoleon’s march to Moscow
-
 ![](./gallery/examples/thumbnails/pie-chart.svg)
 
 ##### Pie chart
 
+![](./gallery/examples/thumbnails/minard.svg)
+
+##### Napoleon’s march to Moscow
+
+![](./gallery/examples/thumbnails/bar-chart.svg)
+
+##### Bar chart
+
 ![](./gallery/examples/thumbnails/heatmap.svg)
 
 ##### Heatmap
-
-![](./gallery/examples/thumbnails/boxplot.svg)
-
-##### Box plots
 
 [See all examples →](gallery/index.llms.md)
 
@@ -57,12 +57,12 @@ LABEL
 or
 
 ``` bash
-# Jupyter kernel
+# Jupyter kernel (PyPI)
 uv tool install ggsql-jupyter
 ggsql-jupyter --install
 
-# CLI
-uv tool install ggsql
+# CLI (crates.io)
+cargo install ggsql
 ```
 
 ## Features
